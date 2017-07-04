@@ -1,3 +1,17 @@
+/* icons */
+
+@font-face {
+    font-family: "wiki";
+    src:url("fonts/wiki.eot");
+    src:url("fonts/wiki.eot?#iefix") format("embedded-opentype"),
+    url("fonts/wiki.woff") format("woff"),
+    url("fonts/wiki.ttf") format("truetype"),
+    url("fonts/wiki.svg#wiki") format("svg");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* general */
 .btn_icon {
     text-indent: -9999px;
@@ -23,8 +37,7 @@
 
 /* header */
 #dokuwiki__header {
-    background: @ini_background;
-    border-bottom: 1px solid @ini_border;
+    background: @ini_background_header;
 
     h1 {
         margin: 5px 0 0 0;
@@ -37,7 +50,7 @@
     a:link,
     a:hover,
     a:active {
-        color: @ini_text;
+        color: @ini_text_header;
         text-decoration: none;
     }
     button {
@@ -46,9 +59,22 @@
         margin: 5px 0;
         border: 0 none;
         outline: none;
-        background: transparent url('images/ipari-simpleline.png') no-repeat;
-        background-size: 30px;
-        text-indent: -9999px;
+        background: transparent;
+    }
+    button:before {
+        font-family: "wiki" !important;
+        content: attr(data-icon);
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        font-size: 1.6em;
+        color: @ini_text_header;
     }
     div.left {
         button:first-child {
@@ -77,14 +103,14 @@
             padding: 4px 6px;
         }
     }
-    .btn_left {
-        background-position: 0 0;
+    .btn_left:before {
+        content: "\62";
     }
-    .btn_right {
-        background-position: 0 -90px;
+    .btn_right:before {
+        content: "\67";
     }
-    .btn_search {
-        background-position: 0 -45px;
+    .btn_search:before {
+        content: "\61";
     }
 }
 
@@ -167,10 +193,24 @@
         white-space: nowrap;
     }
     li a:before {
-        content: url('images/ipari-simpleline.png');
+        /*content: url('images/ipari-simpleline.png');
         display: inline-block;
         font-size: 0;
-        line-height: 0;
+        line-height: 0;*/
+
+        font-family: "wiki" !important;
+        content: attr(data-icon);
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        speak: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        font-size: 1.6em;
+        color: #999;
     }
     li a span {
         display: inline-block;
@@ -184,16 +224,16 @@
         background-image: none !important;
     }
     a.action.admin:before {
-        margin-top: -720px;
+        content: "\6e";
     }
     a.action.profile:before {
-        margin-top: -540px;
+        content: "\6d";
     }
     a.action.login:before {
-        margin-top: -630px;
+        content: "\6a";
     }
     a.action.logout:before {
-        margin-top: -675px;
+        content: "\6b";
     }
     a.action.register:before {
         margin-top: -585px;
@@ -202,35 +242,35 @@
         margin-top: -135px;
     }
     a.action.show:before {
-        margin-top: -225px;
+        content: "\66";
     }
     a.action.source:before {
         margin-top: -180px;
     }
     a.action.edit:before {
-        margin-top: -90px;
+        content: "\67";
     }
     a.action.revs:before {
-        margin-top: -495px;
+        content: "\68";
     }
     a.action.backlink:before {
-        margin-top: -450px;
+        content: "\69";
     }
     a.action.top:before {
         margin-top: -405px;
     }
     a.action.recent:before {
-        margin-top: -270px;
+        content: "\63";
     }
     a.action.media:before {
-        margin-top: -315px;
+        content: "\6f";
     }
     a.action.index:before {
-        margin-top: -360px;
+        content: "\70";
     }
     // icons for plugins
     a.action.plugin_export_pdf:before {
-        margin-top: -765px;
+        content: "\64";
     }
 }
 
@@ -296,5 +336,3 @@
         padding: 0.5em 1em;
     }
 }
-
-/* icons */
